@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bmi & calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <center>    <form action="" id="form">
+    <div class="container">
+        <h1>Bmi calculator</h1><br>
+        <label for="weight">weight</label><br>
+        <input type="number" id="weight" placeholder="Enter your weight in kg"><br><br>
+        <label for="heigth">Height</label><br>
+        <input type="number" id="height" placeholder="Enter your height in m" >
+        <br><br>
+        <button type="submit" onclick="getbmi()">get bmi</button><br>
+      <div class="span">
+          <span id="results"></span>
+        <span id="results1"></span>
+      </div>
+
+    </div>
+   
+        
+    
+    </form>
+    <footer>
+         &copy;developed by Armando developer <br>
+    <br>
+    2025 <i>bmi calculator</i>
+    </footer>
+    </center>
+<script>
+function getbmi()
+{
+    const weight = document.getElementById("weight").value;
+    const height= document.getElementById("height").value;
+    const bmi = weight / (height * height);
+    const results = document.getElementById("results");
+    results.innerHTMl = "Your BMI is"+ bmi.toFixed(2) ;
+
+
+
+    if (bmi < 18.5)
+{
+    results.innerHTML ="your bmi is "+bmi.toFixed(2)+"" +"you are underweight";
+
+}
+else if(bmi >= 18.5 && bmi <24.9)
+{
+results.innerHTML ="your bmi is "+bmi.toFixed(2)+"" +"you are normal weight";
+}
+else if(bmi >=25 && bmi <29.9)
+{
+    results.innerHTML ="your bmi is "+bmi.toFixed(2)+"" +"you are overweight";
+}
+else if(bmi >=30 && bmi <34.9)
+{
+    results.innerHTML ="your bmi is "+bmi.toFixed(2)+"" +"you are obese class 1 (Moderate)";
+
+}
+else if(bmi >=35 && bmi <39.9)
+{
+    results.innerHTML ="your bmi is "+bmi.toFixed(2)+"" +"you are obese class 2 (severe)";
+
+}
+else if(bmi >=40)
+{
+    results.innerHTML ="your bmi is "+bmi.toFixed(2)+"" +"you are obese calss 3 (very severe or morbid)";
+}
+else
+{
+    results.innerHTML="invalid input"
+}
+}
+
+</script>
+</body>
+</html>
